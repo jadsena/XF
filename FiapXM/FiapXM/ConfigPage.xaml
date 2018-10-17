@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FiapXM.ConfigPage"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True">
+    <ContentPage.Content>
+        <TableView>
+            <TableView.Root>
+                <TableSection Title="Privacidade">
+                    <SwitchCell Text="Aceita receber e-mails?" On="{Binding AceitaEmail}"/>
+                </TableSection>
+                <TableSection Title="E-mail">
+                    <EntryCell IsEnabled="{Binding AceitaEmail}" Placeholder="Informe seu E-mail" Text="{Binding Email}" x:Name="txtEmail" ></EntryCell>
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>
