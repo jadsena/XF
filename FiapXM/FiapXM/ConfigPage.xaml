@@ -5,15 +5,22 @@
              NavigationPage.HasNavigationBar="True"
              NavigationPage.HasBackButton="True">
     <ContentPage.Content>
-        <TableView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TableView Grid.Row="0">
             <TableView.Root>
                 <TableSection Title="Privacidade">
                     <SwitchCell Text="Aceita receber e-mails?" On="{Binding AceitaEmail}"/>
                 </TableSection>
-                <TableSection Title="E-mail">
-                    <EntryCell IsEnabled="{Binding AceitaEmail}" Placeholder="Informe seu E-mail" Text="{Binding Email}" x:Name="txtEmail" ></EntryCell>
-                </TableSection>
             </TableView.Root>
         </TableView>
+            <StackLayout Padding="10" Grid.Row="1">
+                <Entry IsVisible="{Binding AceitaEmail}" Placeholder="Informe seu E-mail" Text="{Binding Email}" x:Name="txtEmail" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
