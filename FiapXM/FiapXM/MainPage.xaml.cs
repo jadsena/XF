@@ -16,7 +16,7 @@ namespace FiapXM
 
         private void btnEnviar_Clicked(object sender, EventArgs e)
         {
-            if(App.Configuracao.AceitaEmail)
+            if(App.Configuracao.AceitaEmail && !string.IsNullOrWhiteSpace(App.Configuracao.Email))
                 DisplayAlert("Atenção"
                     , string.Format("E-mail enviado para {0}", App.Configuracao.Email)
                     , "OK");
